@@ -2,10 +2,12 @@ version: '3.8'
 
 services:
   nginx:
-    image: nginx-brotli:1.27-alpine
+    build:
+      context: .
+    image: nginx:brotli
     container_name: nginx
     volumes:
       - ./nginx:/etc/nginx
-    #   - ./letsencrypt:/etc/letsencrypt
+      - ./letsencrypt:/etc/letsencrypt
     network_mode: host
     restart: unless-stopped

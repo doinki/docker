@@ -1,4 +1,4 @@
-FROM nginx:1.27-alpine AS base
+FROM nginx:1.27.0-alpine AS base
 
 FROM base AS builder
 RUN apk add --no-cache build-base cmake git linux-headers openssl-dev pcre2-dev
